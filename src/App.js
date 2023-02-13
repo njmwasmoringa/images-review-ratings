@@ -1,13 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
-import {Search } from './components/search/search'
+
+import { ImagesProvider } from './context/images.provider';
+import { LoaderProvider } from './context/loader.provider';
+import { Images } from './components/images-grid/Images';
 
 function App() {
   return (
-    <div className="App">
-      <Search/>
-      
-    </div>
+    <LoaderProvider>
+      <ImagesProvider>
+          <Search/>
+          <Images />
+      </ImagesProvider>
+    </LoaderProvider>
+
   );
 }
 
